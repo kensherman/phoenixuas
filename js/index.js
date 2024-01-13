@@ -740,6 +740,7 @@ let postFlashClick = () => {
     programButton.disabled = false;
     eraseButton.disabled = false;
   };
+  
 /*
 connectPreview.onclick = async () => {
     await connectToDevice();
