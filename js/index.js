@@ -234,6 +234,7 @@ $(function () {
 })
 
 document.getElementById('selectFile1').addEventListener('change', utilities.handleFileSelect);
+//document.getElementById('selectFile1').addEventListener('change', utilities.handleWebFileSelect);
 
 let espLoaderTerminal = {
     clean() {
