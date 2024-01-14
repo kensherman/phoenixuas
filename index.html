@@ -30,13 +30,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeFlashComplete"></button>
                   </div>
                   <div class="modal-body" id="preview_body">
-                    <div><p>Flashing of firmware is completed! Click the <b>'Reset Device'</b> button on the Console Tab to reset your device with the new flashed firnware.
+                    <!-- <div><p>Flashing of firmware is completed! Click the <b>'Reset Device'</b> button on the Console Tab to reset your device with the new flashed firnware. -->
                       <br><br>
                       <span id="appDownloadLink"></span>
                       <br /><br />
                       <span id="setupPayloadInfoText"></span>
-                    </p>
-                    </div>
+                    <!-- </p>
+                    </div> -->
                     <hr>
                     <div id='qrcodeContainer' style='display:flex'>
                         <div id="qrAndroidRow">
@@ -157,8 +157,8 @@
             <div class="text-center mt-3 intro-text">
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <label style="display:none" id="lblConnTo"><b>Connected to device: </b></label>
-                    <p><span>ESP Launchpad helps you to flash the selected firmware image onto your device.</span>
-                    <br /><span id="ensureConnect"> Ensure you have connected your device to the serial USB port. Click on the 'Connect' button in the top menu option, to connect to your attached device.
+                    <p><span>ESP Launchpad helps you to flash the selected firmware to your Phoenix UAS mRID.</span>
+                    <br /><span id="ensureConnect"> Ensure you have connected your Phoenix UAS mRID to the serial USB port. Click on the 'Connect' button in the top menu option, to connect to your attached device.
                         Note : Once you flash your device, any earlier firmware would be overwritten.</span>
                     </p>
 
@@ -243,15 +243,15 @@
 
         <!-- DIY tab content - start -->
         <div class="container tabs-section main-page-tab-panel" data-tab-panel-id="diy">
-            <h5 class="pt-4 pb-2 lh-lg">Choose your own built firmware image from the local storage to flash and use.</h5>
+            <h5 class="pt-4 pb-2 lh-lg">Update the firmware on your Phoenix UAS mRID.</h5>
                 <br>
-                <input class="btn btn-danger btn-sm" type="button" id="eraseButton" value="Erase Flash" data-toggle="tooltip" 
-            data-placement="top" title="Erase firmware on your device"/>
+                <!-- <input class="btn btn-danger btn-sm" type="button" id="eraseButton" value="Erase Flash" data-toggle="tooltip" 
+            data-placement="top" title="Erase firmware on your device" onclick="alert('function disabled')"/>
                 
                 <div class="alert alert-danger alert-dismissible fade-in-down" id="alertDiv" style="display:none; margin-top:10px">
                     <a href="#" class="close" aria-label="close" onclick="$('.alert').hide()">&times;</a>
                     <span id="alertmsg"></span>
-                </div>
+                </div> -->
                 <div id="files">
                     <table id="fileTable">
                         <thead>
@@ -263,7 +263,7 @@
                         </thead>
                         <tbody id="tableBody">
                             <tr id="row0">
-                                <td class="input-col"><input type="text" id="offset1" name="offset1" value="0x10000"></td>
+                                <td class="input-col"><input type="text" id="offset1" name="offset1" value="0x10000" disabled></td>
                                 <td class="input-col"><input type="file" id="selectFile1" name="selected_file1"></td>
                                 <td><input type="image" src="assets/icons/remove.png"></td>
                             </tr>
@@ -290,7 +290,7 @@
                     <div id="appInfo"></div>
                 </div>
                 <div class="col-12 fade-in-down" id="terminalContainer" style="display:none;">
-                    <div class="button-container text-end mb-sm-3">
+                    <div class="button-container text-end mb-sm-3" style="display: none;">
                         <div class="field-container" data-toggle="tooltip" data-placement="right" title="Reset your device" style="display:inline-block;">
                             <button type="button" class="app-button btn btn-outline-dark" id="consoleStartButton" disabled>
                                 Reset Device
@@ -428,7 +428,7 @@
 
         <footer class="mt-auto py-3">
             <div class="container text-center">
-                <span class="text-muted">Copyright © 2023 Espressif Systems</span>
+                <!-- <span class="text-muted">Copyright © 2023 Espressif Systems</span> -->
             </div>
         </footer>
         <!-- Third party libraries-->
@@ -447,5 +447,11 @@
         <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script lang="js" > 
+            window.onload = function(e){ 
+                $(".main-page-tab-panel[data-tab-panel-id='diy']").fadeIn();
+            }   
+
+        </script>
     </body>
 </html>

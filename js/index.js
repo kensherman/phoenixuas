@@ -4,7 +4,7 @@ const disconnectButton = document.getElementById("disconnectButton");
 const resetButton = document.getElementById("resetButton");
 const consoleStartButton = document.getElementById("consoleStartButton");
 const resetMessage = document.getElementById("resetMessage");
-const eraseButton = document.getElementById("eraseButton");
+//const eraseButton = document.getElementById("eraseButton");
 const programButton = document.getElementById("programButton");
 const filesDiv = document.getElementById("files");
 const terminal = document.getElementById("terminal");
@@ -67,7 +67,7 @@ let setup_qrcode_payload = "";
 let markdown_payload_url = "";
 
 disconnectButton.style.display = "none";
-eraseButton.style.display = "none";
+//eraseButton.style.display = "none";
 var config = [];
 var isDefault = true;
 
@@ -282,13 +282,13 @@ function postConnectControls() {
         $("#flashButton").prop("disabled", false);
         $("#flashWrapper").tooltip().attr('data-bs-original-title', "This will download and flash the firmware image on your device");
         $("#consoleStartButton").prop("disabled", false);
-        $("#eraseButton").prop("disabled", false);
+        //$("#eraseButton").prop("disabled", false);
 
         ensureConnect.style.display = "none";
         settingsWarning.style.display = "initial";
         connectButton.style.display = "none";
         disconnectButton.style.display = "initial";
-        eraseButton.style.display = "initial";
+        //eraseButton.style.display = "initial";
         filesDiv.style.display = "initial";
         terminalContainer.style.display = "block";
     }
@@ -346,15 +346,15 @@ resetButton.onclick = async () => {
       }
 }
 
-eraseButton.onclick = async () => {
-    postFlashClick();
-    terminalContainer.classList.remove("fade-in-down");
-    eraseButton.disabled = true;
-    $('#v-pills-console-tab').click();
-    await esploader.erase_flash();
-    postFlashDone();
-    eraseButton.disabled = false;
-}
+// eraseButton.onclick = async () => {
+//     postFlashClick();
+//     terminalContainer.classList.remove("fade-in-down");
+//     eraseButton.disabled = true;
+//     $('#v-pills-console-tab').click();
+//     await esploader.erase_flash();
+//     postFlashDone();
+//     eraseButton.disabled = false;
+// }
 
 addFile.onclick = async () => {
     var rowCount = table.rows.length;
@@ -420,7 +420,7 @@ disconnectButton.onclick = async () => {
     settingsWarning.style.display = "none";
     connectButton.style.display = "initial";
     disconnectButton.style.display = "none";
-    eraseButton.style.display = "none";
+    //eraseButton.style.display = "none";
     lblConnTo.style.display = "none";
     alertDiv.style.display = "none";
     ensureConnect.style.display = "initial";
@@ -732,13 +732,13 @@ let postFlashClick = () => {
     flashButton.disabled = true;
     consoleStartButton.disabled = true;
     programButton.disabled = true;
-    eraseButton.disabled = true;
+    //eraseButton.disabled = true;
   };
   let postFlashDone = () => {
     flashButton.disabled = false;
     consoleStartButton.disabled = false;
     programButton.disabled = false;
-    eraseButton.disabled = false;
+    //eraseButton.disabled = false;
   };
   
 /*
